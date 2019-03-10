@@ -2,25 +2,15 @@ import React, { Component } from 'react';
 
 import './global.css';
 
-
 import data from './assets/data/chart_data'
-const chartData = data[0];
-// console.log(data);
-// console.log(chartData);
-
-
 
 import Chart from './com/Chart';
 import ChartLine from './com/ChartLine';
 
 export default class App extends Component {
 
-    componentDidMount() {
-
-
-    }
-
     renderCharts = () => {
+        const chartData = data[0];
         return Object.keys(chartData.names).map((chartName, idx) => {
             const chartColor = chartData.colors[chartName];
 

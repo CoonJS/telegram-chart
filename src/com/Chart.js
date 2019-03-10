@@ -7,7 +7,6 @@ export default class Chart extends Component {
     width = 600;
     height = 400;
 
-
     calcGridScale = () => {
         const { children } = this.props;
 

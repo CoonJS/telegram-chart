@@ -12,7 +12,6 @@ export default class ChartLine extends Component {
         return (
             <g>
                 {data.map((value, idx, data) => {
-
                     const scale = value / maxValue;
                     const isFirst = idx === 0;
                     const isLast = idx === data.length - 1;
