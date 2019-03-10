@@ -1,9 +1,9 @@
 {
-  "name": "my-app",
+  "name": "telegram-chart",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "author": "",
+  "author": "babanov.js@gmail.com",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",

@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'EXY CLI',
+      title: 'Telegram chart',
       template: 'index.html',
       filename: 'index.html'
     })
