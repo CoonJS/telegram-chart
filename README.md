@@ -4,4 +4,4 @@
 
 # preview
 
-![Preview](https://github.com/CoonJS/telegram-chart/blob/master/src/assets/docs/preview.png?raw=true "Preview")
+![Preview](src/assets/docs/Preview.png "Preview")
