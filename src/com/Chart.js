@@ -34,7 +34,7 @@ export default class Chart extends Component {
         const { maxValue, dataLength } = this.calcGridScale();
 
         return (
-            <div style={{ width: '100%', background: '#fff', padding: '32px', display: 'flex', justifyContent: 'center'}}>
+            <div style={{ width: '100%', padding: '32px', display: 'flex', justifyContent: 'center'}}>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width={this.width} height={this.height} viewBox={`0 0 ${this.width} ${this.height}`}>
                     <Grid
                         width={width}
