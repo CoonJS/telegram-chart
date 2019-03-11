@@ -11,11 +11,16 @@ export default class Chart extends Component {
         const { children } = this.props;
 
         let maxValue = 0;
+        let minValue = +Infinity;
+
         let dataLength = 0;
 
         React.Children.forEach(children, child => {
             const dataMax = Math.max( ...child.props.data );
+            const dataMin = Math.min( ...child.props.data );
             maxValue = dataMax > maxValue ? dataMax : maxValue;
+            minValue = dataMin < minValue ? dataMin : minValue;
+
             dataLength = child.props.data.length;
 
             return React.cloneElement(child, {test : 3});
@@ -23,6 +28,7 @@ export default class Chart extends Component {
 
         return {
             maxValue,
+            minValue,
             dataLength
         };
 
@@ -31,7 +37,7 @@ export default class Chart extends Component {
     render() {
 
         const { width, height } = this;
-        const { maxValue, dataLength } = this.calcGridScale();
+        const { maxValue, minValue, dataLength } = this.calcGridScale();
 
         return (
             <div style={{ width: '100%', padding: '32px', display: 'flex', justifyContent: 'center'}}>
@@ -40,10 +46,11 @@ export default class Chart extends Component {
                         width={width}
                         height={height}
                         maxValue={maxValue}
+                        minValue={minValue}
                         count={dataLength}
                     />
                     {React.Children.map(this.props.children, child => (
-                        React.cloneElement(child, { width, height, maxValue })
+                        React.cloneElement(child, { width, height, maxValue, minValue })
                     ))}
                 </svg>
             </div>
