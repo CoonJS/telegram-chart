@@ -1,22 +1,36 @@
 html {
-    display: flex;
-    background-color: #eee;
-    height: 100vh;
-    margin: 0;
-    width: 100%;
-    padding: 0;
+  display: flex;
+  background-color: #eee;
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex: 1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
 }
 
 #app {
-    display: flex;
-    flex: 1;
-    align-items: flex-start;
-    justify-content: center;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.labels {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
 }
