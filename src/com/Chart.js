@@ -35,7 +35,6 @@ export default class Chart extends Component {
     }
 
     render() {
-
         const { width, height } = this;
         const { maxValue, minValue, dataLength } = this.calcGridScale();
 

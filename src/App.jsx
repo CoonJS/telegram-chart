@@ -16,7 +16,7 @@ export default class App extends Component {
     isNightMode: true,
     selectedChartIdx: 0,
     chartData: data
-  }
+  };
 
   renderCharts = () => {
     const chartData = this.state.chartData[this.state.selectedChartIdx];
@@ -38,12 +38,12 @@ export default class App extends Component {
       );
 
     })
-  }
+  };
 
   handleSwitchMode = () => {
     const { isNightMode } = this.state;
     this.setState({ isNightMode: !isNightMode })
-  }
+  };
 
   handleChange = e => {
     this.setState({selectedChartIdx: e.target.value});
