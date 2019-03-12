@@ -3,11 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryPoint = path.resolve(__dirname, 'index.js');
+const outputPath = path.resolve(__dirname, 'docs');
 
 module.exports = {
   entry: entryPoint,
   output: {
-
+    path: outputPath
   },
   module: {
     rules: [
