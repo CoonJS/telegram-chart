@@ -15,9 +15,9 @@ export default class Grid extends Component {
     }
 
     render() {
-        const { maxValue, minValue, width, height } = this.props;
+        const { maxValue, width, height } = this.props;
         const { linesCount} = this.state;
-        const delta = maxValue / 5;
+        const step = Math.floor(maxValue / 5);
 
         let lines = [];
 
@@ -27,22 +27,8 @@ export default class Grid extends Component {
 
         return (
             <g>
-                {lines.map((line, idx, lines) => {
-
-                    const scale = delta * idx / maxValue;
-                    const isFirst = idx === 0;
-                    const isLast = lines.length - 1 === idx;
-
-                    let y = height * (1 -  scale);
-
-                    if (isFirst) {
-                       y = height;
-                    }
-
-                    if (isLast) {
-                        y = minValue;
-                    }
-
+                {lines.map((line, idx) => {
+                    const y = height * (1 - idx / 5);
                     return  (
                         <g key={idx}>
                             <text
@@ -51,7 +37,7 @@ export default class Grid extends Component {
                                 y={y - 4}
                                 style={{fontFamily: 'monospace', fontSize: '12px', fontWeight: '100'}}
                             >
-                                {Math.floor(delta * idx)}
+                                {idx * step}
                             </text>
                             <line
                                 x1={0}
